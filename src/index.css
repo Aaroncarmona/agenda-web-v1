@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #202020;
+  color: white;
+}
+
+
+.scrollbar-transparent-gray::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.scrollbar-transparent-gray::-webkit-scrollbar-thumb {
+  background-color: gray; /* Color del indicador de desplazamiento */
+}
+
+.scrollbar-transparent-gray::-webkit-scrollbar-thumb:hover {
+  background-color: darkgray; /* Color del indicador de desplazamiento al pasar el ratón */
+}
