@@ -11,7 +11,7 @@ export const createContact = ( contact ) =>
     contactsApi.post("/" , contact)
 
 export const deleteContact = ( id ) => 
-    contactsApi.delete(`/${id}`)
+    contactsApi.delete(`/${id}/`)
 
 export const updateContract = ( id , contact ) =>
     contactsApi.put(`/${id}/`, contact)

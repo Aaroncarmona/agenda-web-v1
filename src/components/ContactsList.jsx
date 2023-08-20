@@ -1,42 +1,37 @@
-import { useEffect, useState } from "react"
-import { getAllContacts } from "../api/contacts.api";
-import { ContactCard } from "./ContactCard";
-import { Container } from "postcss";
+import {useEffect, useState} from "react"
+import {getAllContacts} from "../api/contacts.api";
+import {ContactCard} from "./ContactCard";
 
+export function ContactsList({filter, currentContact , setCurrentContact}) {
 
-export function ContactsList ({filter, contact , setContact}) {
-    
-    const [ contacts , setContacts ] = useState([])
-    
-    useEffect ( () => {
-        
+    const [contacts, setContacts] = useState([])
+
+    useEffect(() => {
+
         async function loadContacts() {
             const res = await getAllContacts()
             setContacts(res.data)
         }
+
         loadContacts()
         console.log("pagina cargada")
-    } , [])
+    }, [currentContact])
 
     return (
-        <div className="flex flex-col"> 
-            { 
+        <div className="">
+            {
                 contacts
                     .filter(contact => {
-                        
-                        if ( filter == "" || filter == undefined ) return true
-                        
-                        return (contact.name.toLowerCase().includes(filter.toLowerCase()))
-                         || (contact.email.toLowerCase().includes(filter.toLowerCase()))
-                         || (contact.number.toLowerCase().includes(filter.toLowerCase()))
 
-                        return true
-                        
+                        if (filter == "" || filter == undefined) return true
+                        return (contact.name.toLowerCase().includes(filter.toLowerCase()))
+                            || (contact.email.toLowerCase().includes(filter.toLowerCase()))
+                            || (contact.number.toLowerCase().includes(filter.toLowerCase()))
                     }).map(contact => (
-                        <ContactCard key={contact.id} contact={contact}/>
+                        <ContactCard key={contact.id} contact={contact} currentContact={currentContact} setCurrentContact={setCurrentContact} />
                     ))
             }
         </div>
-        
+
     )
 }

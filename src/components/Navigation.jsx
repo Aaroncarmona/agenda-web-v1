@@ -3,16 +3,8 @@ import imagen from '../assets/hacker.png'
 import { useState } from 'react'
 
 export function Navigation( { filter , setFilter} ) {
-
-
     return (
-    
-        <div className='flex' >
-            <Link to='/contacts'>
-                <img src={imagen} 
-                    className='h-10' />
-            </Link>
-            
+        <div>
             <input 
                 type="text"
                 placeholder="Buscar contactos"
@@ -21,9 +13,5 @@ export function Navigation( { filter , setFilter} ) {
                 onChange={(e) => { setFilter(e.target.value) }}
             />
         </div>
-        
-        
-        
-        
     ) 
 }
