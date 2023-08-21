@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const contactsApi = axios.create({
-    baseURL : 'https://agenda-back-v1.onrender.com/contacts/api/v1/'
+    baseURL : 'https://agenda-back-v1.onrender.com/contacts/api/v1/contact/'
 })
 
 export const getAllContacts = () => 
