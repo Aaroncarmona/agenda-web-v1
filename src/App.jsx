@@ -1,4 +1,4 @@
-import { BrowserRouter , Navigate, Route, Router, Routes } from 'react-router-dom'
+import { BrowserRouter , Route, Routes } from 'react-router-dom'
 import { ContactsPage } from './pages/ContactsPage'
 import { Toaster } from 'react-hot-toast'
 function App() {

@@ -1,14 +1,11 @@
 import {useForm} from 'react-hook-form'
 import {useEffect, useState} from 'react'
 import {createContact, deleteContact, getContact, updateContract} from '../api/contacts.api'
-import {useNavigate, useParams} from 'react-router-dom'
 import {toast} from 'react-hot-toast'
 import {PencilIcon, ClipboardDocumentIcon, TrashIcon} from '@heroicons/react/24/outline'
 
 
 export function ContactsFromPage({currentContact, setCurrentContact}) {
-
-    const navigate = useNavigate()
 
     const {
         register, handleSubmit,
@@ -39,7 +36,7 @@ export function ContactsFromPage({currentContact, setCurrentContact}) {
                 }
             })
         }
-        navigate("/contacts")
+        setCurrentContact({})
     })
 
     useEffect(() => {
