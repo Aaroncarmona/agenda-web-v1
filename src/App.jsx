@@ -6,8 +6,7 @@ function App() {
     <BrowserRouter>
       <div className="">
         <Routes>
-          <Route path='/' element={<Navigate to='/contacts' />} />
-          <Route path='/contacts' element={<ContactsPage />} />
+          <Route path='/' element={<ContactsPage />} />
         </Routes>
         <Toaster/>
       </div>
